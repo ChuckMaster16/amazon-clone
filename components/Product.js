@@ -20,7 +20,7 @@ const [hasPrime]=useState(Math.random() < 0.5)
     <h4>{title}</h4>
     <div className="flex">
     {Array(rating).fill().map((_, i)=>(
-      <StarIcon className="text-yellow-500" />
+      <StarIcon key={rating} className="text-yellow-500" />
     ))}
     </div>
     <p className="text-xs my-2 line-clamp-2">{description}</p>
