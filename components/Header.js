@@ -65,7 +65,7 @@ function Header() {
      <MenuIcon/>
      All
      </p>
-     <p className="link">Today's Deals</p>
+     <p className="link">Today Deals</p>
      <p className="link">Cuatomer Service</p>
      <p className="link">Registry</p>
      <p className="link">Gift Card</p>
