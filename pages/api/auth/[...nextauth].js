@@ -18,11 +18,4 @@ export const authOptions = {
     // ...add more providers here
   ],
 }
-export default NextAuth({
-
-  providers: [
-  ],
-  callbacks: {
-  },
-  secret: process.env.JWT_SECRET,
-});
+export default NextAuth(authOptions)
