@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
-import { getToken } from "next-auth/jwt"
+
 
 
 
@@ -19,7 +19,5 @@ export const authOptions = {
     // ...add more providers here
   ],
   secret: process.env.SECRET,
-
-
 }
 export default NextAuth(authOptions)
