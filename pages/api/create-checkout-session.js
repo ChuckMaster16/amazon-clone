@@ -23,7 +23,7 @@ const session = await stripe.checkout.sessions.create({
   payment_method_types: ["card"],
   shipping_rates:["shr_1Lx1jyKVFSI616Fkc1mxKNH8"],
   shipping_address_collection: {
-    allowed_countries: ["GB", "US", "CA"],
+    allowed_countries: ["GB", "US", "CA", "MX"],
   },
   line_items:transformedItems,
   mode: "payment",

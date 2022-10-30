@@ -15,6 +15,8 @@ const firebaseConfig = {
   appId: "1:9837659118:web:f47135e7ec070395fa44ff",
   measurementId: "G-ZX81GX3DB2"
 };
-const db = firebase.firestore();
-const storage = firebase.storage()
-export {db,storage };
+const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) :  firebase.app();
+const db = app.firestore();
+
+export default db;
+{/*const storage = firebase.storage()*/}

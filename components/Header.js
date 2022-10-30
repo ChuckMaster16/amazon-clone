@@ -19,8 +19,9 @@ const items = useSelector(selectItems);
 
   return (
     <header>
-    <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
+    <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2 ">
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+
             <Image
             onClick={()=>route.push("/")}
             src="https://res.cloudinary.com/chuckmaster/image/upload/v1663884632/amazon%20clone%20files/amazon_PNG11_qvd70g.png"
@@ -31,10 +32,10 @@ const items = useSelector(selectItems);
             className="cursor-pointer"
             />
         </div>
-        <div className="flex items-end link py-1 px-0 mr-2 leading-4">
+        <div className="flex items-end link py-1 px-0 mr-2 leading-4 hidden md:flex">
             <FmdGoodOutlinedIcon className="text-white font-semibold" />
-            <div className="pr-6">
-              <p className="text-white">Deliver to</p>
+            <div className="pr-6 ">
+              <p className="text-white ">Deliver to</p>
               <p className="font-extrabold text-white">Ithaca 14850</p>
             </div>
         </div>
@@ -43,7 +44,7 @@ const items = useSelector(selectItems);
       <input className="p-2 h-full w-6 flex-grow flex-shrink focus:outline-none" type="text" placeholder="search" />
        <SearchIcon className="w-10 "/>
       </div>
-      <div className="flex link ml-2">
+      <div className="flex link ml-2 hidden md:flex">
       <Image
       src="https://res.cloudinary.com/chuckmaster/image/upload/v1666225698/amazon%20clone%20files/usflag_ul4qmb.png"
       alt="Amazon"
@@ -52,14 +53,14 @@ const items = useSelector(selectItems);
       objectFit="contain"
       className="cursor-pointer"
       />
-      <p className="text-white font-extrabold ">EN<span className="text-gray-100"><ArrowDropDownOutlinedIcon/></span></p>
+      <p className="text-white font-extrabold hidden md:flex">EN<span className="text-gray-100"><ArrowDropDownOutlinedIcon/></span></p>
       </div>
       <div className="text-white flex  items-center text-xs space-x-6 whitespace-nowrap">
           <div onClick={!session ? signIn : signOut} className="leading-3   link">
             <p className="underline">{session ? `Hello, ${session.user.name}` : "Sign in"}</p>
             <p>Account & List</p>
           </div>
-          <div className="leading-3   link">
+          <div className="leading-3   link hidden md:flex" onClick={()=> route.push("/orders")}>
             <p>Retruns</p>
             <p>& Orders</p>
           </div>
@@ -72,16 +73,18 @@ const items = useSelector(selectItems);
       </div>
     </div>
 
-    <div className="flex items-center bg-amazon_blue-light text-white h-11 space-x-3 p-2 pl-6">
-    <p className="link flex items-center py-1">
+    <div className="flex items-center bg-amazon_blue-light text-white h-11  space-x-3 p-2 pl-6 sm:text-[8px]">
+    <p className="link flex items-center py-1 hidden md:flex">
      <MenuIcon/>
      All
      </p>
-     <p className="link py-1">Today Deals</p>
-     <p className="link py-1">Cuatomer Service</p>
-     <p className="link py-1">Registry</p>
-     <p className="link py-1">Gift Card</p>
-     <p className="link py-1">Sell</p>
+     <div className=" flex whitespace-nowrap text-xs -ml">
+     <p className="link py-1 ">Today Deals</p>
+     <p className="link py-1 ">Cuatomer Service</p>
+     <p className="link py-1 ">Registry</p>
+     <p className="link py-1 ">Gift Card</p>
+     <p className="link py-1 ">Sell</p>
+     </div>
 
     </div>
     </header>
