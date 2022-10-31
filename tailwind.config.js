@@ -3,6 +3,8 @@ module.exports = {
   mode: "jit",
   theme: {
     screens: {
+      'xxs': '540px',
+      // min-width (min-width: 540px) { ... }
       'sm': '640px',
       // => @media (min-width: 640px) { ... }
 
@@ -36,5 +38,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    require('tailwind-scrollbar-hide'),
   ],
 }

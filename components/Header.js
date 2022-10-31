@@ -74,11 +74,11 @@ const items = useSelector(selectItems);
     </div>
 
     <div className="flex items-center bg-amazon_blue-light text-white h-11  space-x-3 p-2 pl-6 sm:text-[8px]">
-    <p className="link flex items-center py-1 hidden md:flex">
+    <p className="link flex items-center py-1 ">
      <MenuIcon/>
      All
      </p>
-     <div className=" flex whitespace-nowrap text-xs -ml">
+     <div className=" hidden sm:flex whitespace-nowrap text-xs">
      <p className="link py-1 ">Today Deals</p>
      <p className="link py-1 ">Cuatomer Service</p>
      <p className="link py-1 ">Registry</p>

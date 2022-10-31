@@ -1,20 +1,21 @@
 import React from 'react'
 import Header from '../components/Header'
-import {useSession} from 'next-auth/react'
+import {useSession, getSession} from 'next-auth/react'
 import moment from 'moment'
 import db from '../firebase'
 import Order from '../components/Order'
 
 function Orders({orders}) {
-  const session = useSession();
+  const { data: session, status } = useSession()
   console.log(orders);
+
   return (
     <div className="">
        <Header/>
        <main className="max-w-screen-lg mx-auto p-10">
           <h1 className="text-3xl border-b mb-2 pb-1 border-yellow-400">Your Orders</h1>
             {session ? (
-              <h2 className=""> {orders.length}Your orders</h2>
+              <h2 className=""> Your  Recent Orders</h2>
             ) : (
               <h2 className="">Please Login to see Your orders</h2>
             )}
@@ -40,9 +41,9 @@ function Orders({orders}) {
 }
 export default Orders
 
-export async function getServersideProps(context) {
+export async function getServerSideProps(context) {
   const stripe= require('stripe')(process.env.STRIPE_SECRET_KEY);
-  //get users logged in creds
+  //get users logged in credencials
   const session = await getSession(context);
   if (!session) {
     return{

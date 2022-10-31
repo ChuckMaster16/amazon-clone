@@ -1,13 +1,13 @@
 import {buffer} from 'micro';
-import * as admin from 'firebase-admin';
+import  * as admin from 'firebase-admin';
 
 //secure a firebase connection from the backend
-const serviceAcount = require('../../../permissions.json');
+const serviceAccount = require('../../permissions.json');
 const app = !admin.apps.length
 ? admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 })
-: admin:app();
+: admin.app();
 
 
 //establish connection with stripe

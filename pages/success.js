@@ -15,7 +15,7 @@ function Success() {
             <h1 className="text-3xl"> Thank you your order has been Confirmed!</h1>
           </div>
             <p>
-              Thank you for Shopping with us. We'll send you a confirmation order number and
+              Thank you for Shopping with us. We will send you a confirmation order number and
               tracking details once your order has been shipped. If you would like to Check
               the status of Orders(s) Please press the link Bellow.
             </p>
